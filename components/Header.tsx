@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Logo from './Logo';
 
 const Header = () => {
   return (
@@ -18,7 +19,7 @@ const Header = () => {
       </nav>
 
       <a className='p-8' href='/'>
-        <Image src='./unguardedwhitecursor.svg' alt='' height={20} width={20} />
+        <Logo className='h-12' />
       </a>
     </header>
   );
