@@ -3,12 +3,12 @@ import Logo from './Logo';
 
 export default function Footer() {
   return (
-    <footer className='fixed bg-black z-50 bottom-0 h-12 w-full'>
+    <footer className='fixed font-decay bg-black z-50 bottom-0 h-10 w-full'>
       <Marquee
         className='marquee-wrapper'
         style={{ height: '100%' }}
         gradient={false}
-        speed={150}
+        speed={120}
         pauseOnHover
       >
         {[...Array(20)].map((_, idx) => (
