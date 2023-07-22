@@ -12,8 +12,8 @@ export default function Footer() {
         pauseOnHover
       >
         {[...Array(20)].map((_, idx) => (
-          <div key={idx} className='flex items-center mr-8'>
-            <span className='uppercase text-white mr-8'>
+          <div key={idx} className='flex items-center mr-12'>
+            <span className='uppercase text-white mr-12'>
               <a href='/'>Unguarded</a>
             </span>
             <Logo className='h-8' />

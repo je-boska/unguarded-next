@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className='flex justify-between items-center fixed top-0 w-full h-16 bg-black text-white'>
       <nav className='hidden md:block font-decay text-2xl'>
-        <ul className='flex p-8 gap-8'>
+        <ul className='flex p-8 gap-10'>
           <li>
             <a href='/info'>Info</a>
           </li>
