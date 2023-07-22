@@ -1,9 +1,9 @@
 import Marquee from 'react-fast-marquee';
 import Logo from './Logo';
 
-const UnguardedMarquee = () => {
+export default function Footer() {
   return (
-    <div className='fixed bg-black z-50 bottom-0 h-12 w-full'>
+    <footer className='fixed bg-black z-50 bottom-0 h-12 w-full'>
       <Marquee
         className='marquee-wrapper'
         style={{ height: '100%' }}
@@ -11,7 +11,7 @@ const UnguardedMarquee = () => {
         speed={150}
         pauseOnHover
       >
-        {[...Array(20)].map((idx) => (
+        {[...Array(20)].map((_, idx) => (
           <div key={idx} className='flex items-center mr-8'>
             <span className='uppercase text-white mr-8'>
               <a href='/'>Unguarded</a>
@@ -20,8 +20,6 @@ const UnguardedMarquee = () => {
           </div>
         ))}
       </Marquee>
-    </div>
+    </footer>
   );
-};
-
-export default UnguardedMarquee;
+}

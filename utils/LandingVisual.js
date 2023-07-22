@@ -36,45 +36,11 @@ const fragment = `
                   }
           `;
 
-const renderer = new ogl.Renderer({ dpr: 2 });
-const gl = renderer.gl;
-
-const flowmap = new ogl.Flowmap(gl);
-
-// Triangle that includes -1 to 1 range for 'position', and 0 to 1 range for 'uv'.
-const geometry = new ogl.Geometry(gl, {
-  position: {
-    size: 2,
-    data: new Float32Array([-1, -1, 3, -1, -1, 3]),
-  },
-  uv: { size: 2, data: new Float32Array([0, 0, 2, 0, 0, 2]) },
-});
-
-const texture = new ogl.Texture(gl, {
-  minFilter: gl.LINEAR,
-  magFilter: gl.LINEAR,
-});
-
-let a1, a2;
-
-const program = new ogl.Program(gl, {
-  vertex,
-  fragment,
-  uniforms: {
-    uTime: { value: 0 },
-    tWater: { value: texture },
-    res: {
-      value: new ogl.Vec4(window.innerWidth, window.innerHeight, a1, a2),
-    },
-    img: { value: new ogl.Vec2(imgSize[0], imgSize[1]) },
-    // Note that the uniform is applied without using an object and value property
-    // This is because the class alternates this texture between two render targets
-    // and updates the value property after each render.
-    tFlow: flowmap.uniform,
-  },
-});
-
 export function runLandingVisual() {
+  const renderer = new ogl.Renderer({ dpr: 2 });
+  const gl = renderer.gl;
+  const flowmap = new ogl.Flowmap(gl);
+
   document.body.appendChild(gl.canvas);
 
   // Variable inputs to control flowmap
@@ -111,6 +77,8 @@ export function runLandingVisual() {
 
   var imageAspect = imgSize[1] / imgSize[0];
 
+  let a1, a2;
+
   if (window.innerHeight / window.innerWidth < imageAspect) {
     a1 = 1;
     a2 = window.innerHeight / window.innerWidth / imageAspect;
@@ -118,6 +86,37 @@ export function runLandingVisual() {
     a1 = (window.innerWidth / window.innerHeight) * imageAspect;
     a2 = 1;
   }
+
+  // Triangle that includes -1 to 1 range for 'position', and 0 to 1 range for 'uv'.
+  const geometry = new ogl.Geometry(gl, {
+    position: {
+      size: 2,
+      data: new Float32Array([-1, -1, 3, -1, -1, 3]),
+    },
+    uv: { size: 2, data: new Float32Array([0, 0, 2, 0, 0, 2]) },
+  });
+
+  const texture = new ogl.Texture(gl, {
+    minFilter: gl.LINEAR,
+    magFilter: gl.LINEAR,
+  });
+
+  const program = new ogl.Program(gl, {
+    vertex,
+    fragment,
+    uniforms: {
+      uTime: { value: 0 },
+      tWater: { value: texture },
+      res: {
+        value: new ogl.Vec4(window.innerWidth, window.innerHeight, a1, a2),
+      },
+      img: { value: new ogl.Vec2(imgSize[0], imgSize[1]) },
+      // Note that the uniform is applied without using an object and value property
+      // This is because the class alternates this texture between two render targets
+      // and updates the value property after each render.
+      tFlow: flowmap.uniform,
+    },
+  });
 
   const mesh = new ogl.Mesh(gl, { geometry, program });
 

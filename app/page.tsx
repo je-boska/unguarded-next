@@ -1,4 +1,4 @@
-import { LandingVisual } from '../components/LandingVisual';
+import LandingVisual from '@/components/LandingVisual';
 
 export default function Home() {
   return (

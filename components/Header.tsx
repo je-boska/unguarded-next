@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import Logo from './Logo';
 
-const Header = () => {
+export default function Header() {
   return (
     <header className='flex justify-between items-center fixed top-0 w-full h-20 bg-black text-white'>
       <nav className='hidden md:block'>
@@ -12,9 +11,6 @@ const Header = () => {
           <li>
             <a href='/releases'>Releases</a>
           </li>
-          <li>
-            <a href='/shop'>Shop</a>
-          </li>
         </ul>
       </nav>
 
@@ -23,6 +19,4 @@ const Header = () => {
       </a>
     </header>
   );
-};
-
-export default Header;
+}
