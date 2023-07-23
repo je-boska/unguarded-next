@@ -22,7 +22,7 @@ a:hover {
 /* RICH TEXT */
 
 .rich-text {
-  @apply mt-40 text-xl md:text-2xl max-w-7xl;
+  @apply text-xl md:text-2xl max-w-7xl;
 }
 
 .rich-text h1 {
