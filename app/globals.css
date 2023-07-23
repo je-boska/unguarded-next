@@ -18,3 +18,21 @@ body {
 a:hover {
   text-decoration: line-through;
 }
+
+/* RICH TEXT */
+
+.rich-text {
+  @apply mt-40 text-2xl max-w-7xl;
+}
+
+.rich-text h1 {
+  @apply text-6xl mb-8;
+}
+
+.rich-text p {
+  @apply mb-8 max-w-3xl;
+}
+
+.rich-text i {
+  @apply font-decay not-italic;
+}

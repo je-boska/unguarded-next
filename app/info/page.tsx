@@ -1,9 +1,13 @@
 import Container from '@/components/Container';
+import getInfoPage from '@/queries/info';
+import { renderRichTextWithImages } from '@/utils/rich-text';
 
-export default function Info() {
+export default async function Info() {
+  const info = await getInfoPage();
+
   return (
     <Container>
-      <p>Info</p>
+      {info.fields.body ? renderRichTextWithImages(info.fields.body) : null}
     </Container>
   );
 }

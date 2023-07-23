@@ -8,7 +8,7 @@ export default async function Releases() {
     <Container>
       {albums.items.map(({ fields: { slug, title } }, idx) => (
         <div key={idx}>
-          <a href={'/' + slug}>{title}</a>
+          <a href={'/releases/' + slug}>{title}</a>
         </div>
       ))}
     </Container>
