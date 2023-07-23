@@ -13,6 +13,7 @@ body {
   color: #fff;
   background: #000;
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 400;
 }
 
 /* a:hover {
@@ -43,4 +44,17 @@ body {
 
 .rich-text i {
   @apply font-decay not-italic;
+}
+
+.rich-text table {
+  @apply w-full max-w-5xl text-left border border-white mt-12;
+}
+
+.rich-text th {
+  @apply font-decay;
+}
+
+.rich-text th,
+.rich-text td {
+  @apply px-2;
 }
