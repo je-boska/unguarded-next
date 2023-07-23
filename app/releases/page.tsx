@@ -7,7 +7,7 @@ export default async function Releases() {
 
   return (
     <Container>
-      <div className='grid md:grid-cols-2 gap-4'>
+      <div className='grid md:grid-cols-2 gap-4 mb-40'>
         {albums.items.map(
           ({ fields: { slug, title, artist, artwork } }, idx) => (
             <div key={idx} className='group relative'>

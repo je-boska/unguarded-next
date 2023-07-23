@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import cx from 'classnames';
+import { usePathname } from 'next/navigation';
 
 const menuItems = [
   {
@@ -14,6 +15,7 @@ const menuItems = [
 
 export default function NavMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -21,17 +23,28 @@ export default function NavMenu() {
         <ul className='flex p-8 gap-10'>
           {menuItems.map(({ title, link }, idx) => (
             <li key={idx}>
-              <a href={link}>{title}</a>
+              <a
+                href={link}
+                className={cx({
+                  'line-through': pathname.includes(link),
+                })}
+              >
+                {title}
+              </a>
             </li>
           ))}
         </ul>
       </nav>
+
+      {/* Mobile nav menu button */}
       <span
         className='m-8 font-decay text-2xl md:hidden'
         onClick={() => setMenuOpen(true)}
       >
         Menu
       </span>
+
+      {/* Mobile nav */}
       <nav
         className={cx(
           'font-decay text-2xl md:hidden fixed w-full h-screen bg-black transition-all',
