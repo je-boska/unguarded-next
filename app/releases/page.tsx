@@ -12,8 +12,8 @@ export default async function Releases() {
           ({ fields: { slug, title, artist, artwork } }, idx) => (
             <div key={idx} className='group relative'>
               <a href={'/releases/' + slug}>
-                <div className='absolute -z-10 group-hover:z-20 w-full h-full flex text-center items-center justify-center font-decay text-2xl'>
-                  {artist!.fields.name}
+                <div className='absolute -z-10 group-hover:z-20 w-full h-full flex text-center items-center justify-center font-decay text-2xl md:text-4xl'>
+                  {artist}
                   <br />
                   {title}
                 </div>
@@ -22,8 +22,8 @@ export default async function Releases() {
                   className='w-full'
                   src={'http:' + artwork!.fields!.file!.url}
                   alt=''
-                  width={400}
-                  height={400}
+                  width={artwork!.fields.file!.details.image!.height}
+                  height={artwork!.fields.file!.details.image!.height}
                 />
               </a>
             </div>

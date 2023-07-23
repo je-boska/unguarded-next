@@ -1,6 +1,17 @@
 import { useState } from 'react';
 import cx from 'classnames';
 
+const menuItems = [
+  {
+    title: 'Info',
+    link: '/info',
+  },
+  {
+    title: 'Releases',
+    link: '/releases',
+  },
+];
+
 export default function NavMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -8,12 +19,11 @@ export default function NavMenu() {
     <>
       <nav className='hidden md:block font-decay text-2xl'>
         <ul className='flex p-8 gap-10'>
-          <li>
-            <a href='/info'>Info</a>
-          </li>
-          <li>
-            <a href='/releases'>Releases</a>
-          </li>
+          {menuItems.map(({ title, link }, idx) => (
+            <li key={idx}>
+              <a href={link}>{title}</a>
+            </li>
+          ))}
         </ul>
       </nav>
       <span

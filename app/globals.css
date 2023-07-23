@@ -29,6 +29,14 @@ a:hover {
   @apply text-4xl md:text-6xl mb-8;
 }
 
+.rich-text h2 {
+  @apply max-w-5xl text-3xl md:text-5xl mb-8;
+
+  @media (min-width: 768px) {
+    line-height: 1.1;
+  }
+}
+
 .rich-text p {
   @apply mb-4 max-w-3xl;
 }

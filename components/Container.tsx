@@ -8,7 +8,7 @@ export default function Container({
   children: ReactNode;
 }) {
   return (
-    <main className={'mt-20 max-w-8xl mx-auto px-8 ' + className}>
+    <main className={'mt-28 max-w-[1400px] mx-auto px-8 ' + className}>
       {children}
     </main>
   );

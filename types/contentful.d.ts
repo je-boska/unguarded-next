@@ -8,9 +8,13 @@ import type {
 
 export interface TypeAlbumFields {
   title: EntryFieldTypes.Symbol;
+  artist: EntryFieldTypes.Symbol;
   slug: EntryFieldTypes.Symbol;
   artwork: EntryFieldTypes.AssetLink;
-  artist: EntryFieldTypes.EntryLink<TypeArtistSkeleton>;
+  format: EntryFieldTypes.Symbol;
+  releaseDate: EntryFieldTypes.Date;
+  catalogueNumber: EntryFieldTypes.Symbol;
+  body?: EntryFieldTypes.RichText;
 }
 
 export type TypeAlbumSkeleton = EntrySkeletonType<TypeAlbumFields, 'album'>;

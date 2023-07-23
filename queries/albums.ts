@@ -21,9 +21,3 @@ export async function getAlbumBySlug(slug: string) {
 
   return albums.items[0];
 }
-
-export async function getArtistById(id: string) {
-  const artist = await client.getEntry<TypeArtistSkeleton>(id);
-
-  return artist;
-}
