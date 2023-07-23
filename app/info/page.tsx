@@ -1,6 +1,6 @@
 import Container from '@/components/Container';
 import getInfoPage from '@/queries/info';
-import { renderRichTextWithImages } from '@/utils/rich-text';
+import { renderRichTextWithImages } from '@/utils/richText';
 
 export default async function Info() {
   const info = await getInfoPage();
