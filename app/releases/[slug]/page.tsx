@@ -3,12 +3,11 @@ import { getAlbumBySlug, getAlbums, getArtistById } from '@/queries/albums';
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const album = await getAlbumBySlug(params.slug);
-  const artist = await getArtistById(album.fields.artist.sys.id);
 
   return (
     <Container>
       <h1>
-        {artist.fields.name}
+        {album.fields.artist!.fields.name}
         <br />
         {album.fields.title}
       </h1>
