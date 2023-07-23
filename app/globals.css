@@ -46,6 +46,10 @@ body {
   @apply font-decay not-italic;
 }
 
+.rich-text img {
+  @apply my-8 max-w-xl;
+}
+
 .rich-text table {
   @apply w-full max-w-5xl text-left border border-white mt-12;
 }
