@@ -38,7 +38,7 @@ export default function NavMenu() {
 
       {/* Mobile nav menu button */}
       <span
-        className='m-8 font-decay text-2xl md:hidden'
+        className='m-8 font-decay text-2xl md:hidden cursor-pointer'
         onClick={() => setMenuOpen(true)}
       >
         Menu

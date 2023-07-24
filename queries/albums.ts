@@ -7,7 +7,11 @@ export async function getAlbums() {
       content_type: 'album',
       include: 3,
     });
-  return albums;
+
+  const sortedAlbums = albums.items.sort((a, b) =>
+    a.fields.releaseDate < b.fields.releaseDate ? 1 : -1
+  );
+  return sortedAlbums;
 }
 
 export async function getAlbumBySlug(slug: string) {

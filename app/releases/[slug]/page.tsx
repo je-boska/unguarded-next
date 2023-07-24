@@ -43,7 +43,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 export async function generateStaticParams() {
   const albums = await getAlbums();
 
-  return albums.items.map((item) => ({
+  return albums.map((item) => ({
     slug: item.fields.slug,
   }));
 }
