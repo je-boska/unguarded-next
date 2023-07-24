@@ -20,6 +20,17 @@ a:hover {
   text-decoration: line-through;
 }
 
+/* CURSOR */
+
+body {
+  cursor: url(/unguardedcursor.png) 0 0, auto !important;
+}
+
+a,
+a:focus {
+  cursor: url(/unguardedcursor.png) 0 0, auto !important;
+}
+
 /* RICH TEXT */
 
 .rich-text {

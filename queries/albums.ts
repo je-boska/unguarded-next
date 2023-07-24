@@ -1,4 +1,4 @@
-import { TypeAlbumSkeleton, TypeArtistSkeleton } from '@/types/contentful';
+import { TypeAlbumSkeleton } from '@/types/contentful';
 import { client } from './client';
 
 export async function getAlbums() {
@@ -8,10 +8,9 @@ export async function getAlbums() {
       include: 3,
     });
 
-  const sortedAlbums = albums.items.sort((a, b) =>
+  return albums.items.sort((a, b) =>
     a.fields.releaseDate < b.fields.releaseDate ? 1 : -1
   );
-  return sortedAlbums;
 }
 
 export async function getAlbumBySlug(slug: string) {
