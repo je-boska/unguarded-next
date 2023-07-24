@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const album = await getAlbumBySlug(params.slug);
-  console.log(album.fields.artwork?.fields.file?.details.image?.height);
+
   return (
     <Container>
       <section className='grid md:grid-cols-2 xl:grid-cols-[2fr,1fr] mb-8 md:mb-20'>
