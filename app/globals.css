@@ -23,12 +23,12 @@ a:hover {
 /* CURSOR */
 
 body {
-  cursor: url(/unguardedcursor.png) 0 0, auto !important;
+  cursor: url(/unguardedcursor.png) 20 20, auto !important;
 }
 
 a,
 a:focus {
-  cursor: url(/unguardedcursor.png) 0 0, auto !important;
+  cursor: url(/unguardedcursor.png) 20 20, auto !important;
 }
 
 /* RICH TEXT */

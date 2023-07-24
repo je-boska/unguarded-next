@@ -1,6 +1,11 @@
 import Container from '@/components/Container';
 import { getAlbums } from '@/queries/albums';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Unguarded | Releases',
+};
 
 export default async function Releases() {
   const albums = await getAlbums();
