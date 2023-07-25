@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import cx from 'classnames';
 import { usePathname } from 'next/navigation';
+import Close from './Close';
 
 const menuItems = [
   {
@@ -67,7 +68,7 @@ export default function NavMenu() {
           className='absolute right-0 m-4 md:m-8'
           onClick={() => setMenuOpen(false)}
         >
-          X
+          <Close />
         </div>
         <ul className='flex flex-col w-full h-full items-center justify-center p-8 gap-10'>
           {menuItems.map(({ title, link }, idx) => (
