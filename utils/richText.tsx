@@ -1,12 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import {
-  BLOCKS,
-  Block,
-  Document,
-  Hyperlink,
-  INLINES,
-  Inline,
-} from '@contentful/rich-text-types';
+import { BLOCKS, Block, Document, Inline } from '@contentful/rich-text-types';
 import Image from 'next/image';
 
 const options = {
@@ -21,19 +14,33 @@ const options = {
         />
       );
     },
-    [INLINES.HYPERLINK]: (node: any) => {
-      if (node.data.uri.includes('https://youtu.be')) {
+    [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
+      if (node.data.target.sys.contentType.sys.id === 'youtubeEmbed') {
         return (
-          <div className='iframe-container'>
+          <div className='youtube-iframe-container'>
             <iframe
-              src={`https://www.youtube.com/embed/${node.data.uri.slice(-11)}`}
+              src={`https://www.youtube.com/embed/${node.data.target.fields.shareLink.slice(
+                -11
+              )}`}
               allowFullScreen
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             ></iframe>
           </div>
         );
       }
-      return <a href={node.data.uri}>{node.content[0].value}</a>;
+      if (node.data.target.sys.contentType.sys.id === 'soundcloudEmbed') {
+        return (
+          <div className='soundcloud-iframe-container'>
+            <iframe
+              width='100%'
+              height='450'
+              allow='autoplay'
+              src={node.data.target.fields.shareLink}
+            ></iframe>
+          </div>
+        );
+      }
+      return <div>Embed failed</div>;
     },
   },
 };

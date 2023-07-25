@@ -92,12 +92,16 @@ a:focus {
 
 /* PRESS TEXT */
 
+.press-text {
+  @apply max-w-3xl;
+}
+
 .press-text h3 {
   @apply text-2xl lg:text-3xl mb-4 font-decay;
 }
 
 .press-text p {
-  @apply mb-4 max-w-3xl;
+  @apply mb-4;
 }
 
 /* PRESS LINKS */
@@ -112,11 +116,16 @@ a:focus {
 
 /* IFRAME */
 
-.iframe-container {
+.soundcloud-iframe-container {
+  @apply my-8;
+}
+
+.youtube-iframe-container {
+  @apply my-8;
   position: relative;
   padding-bottom: 56.25%;
 }
 
-.iframe-container iframe {
+.youtube-iframe-container iframe {
   @apply absolute w-full h-full top-0 left-0;
 }

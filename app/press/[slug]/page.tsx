@@ -1,4 +1,3 @@
-import ArrowLeft from '@/components/ArrowLeft';
 import Container from '@/components/Container';
 import { getPressPageBySlug, getPressPages } from '@/queries/pressPages';
 import { renderRichTextWithImages } from '@/utils/richText';
@@ -12,7 +11,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <>
       <Container>
         <div className='grid lg:grid-cols-[2fr,1fr] mb-8 md:mb-20'>
-          <div className='order-2 mt-8 md:mt-0 lg:order-1'>
+          <div className='order-2 mt-8 pr-8 md:mt-0 lg:order-1'>
             <div className='text-4xl md:text-6xl font-decay mb-12'>
               <h1 className='mb-2'>{pressPage.fields.artist} /</h1>
               <h1>{pressPage.fields.title}</h1>
