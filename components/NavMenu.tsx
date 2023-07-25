@@ -11,6 +11,14 @@ const menuItems = [
     title: 'Releases',
     link: '/releases',
   },
+  {
+    title: 'Contact',
+    link: '/contact',
+  },
+  {
+    title: 'Bandcamp',
+    link: 'https://unguarded.bandcamp.com/',
+  },
 ];
 
 export default function NavMenu() {
@@ -25,6 +33,7 @@ export default function NavMenu() {
             <li key={idx}>
               <a
                 href={link}
+                target={link.startsWith('http') ? '_blank' : '_self'}
                 className={cx({
                   'line-through': pathname.includes(link),
                 })}
@@ -67,7 +76,12 @@ export default function NavMenu() {
               onClick={() => setMenuOpen(false)}
               className='text-4xl'
             >
-              <a href={link}>{title}</a>
+              <a
+                href={link}
+                target={link.startsWith('http') ? '_blank' : '_self'}
+              >
+                {title}
+              </a>
             </li>
           ))}
         </ul>
