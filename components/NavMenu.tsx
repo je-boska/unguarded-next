@@ -47,7 +47,7 @@ export default function NavMenu() {
 
       {/* Mobile nav menu button */}
       <span
-        className='m-8 font-decay text-2xl md:hidden hover:line-through'
+        className='m-4 md:m-8 font-decay text-2xl md:hidden hover:line-through'
         onClick={() => setMenuOpen(true)}
       >
         Menu
@@ -64,7 +64,7 @@ export default function NavMenu() {
         )}
       >
         <div
-          className='absolute right-0 m-8'
+          className='absolute right-0 m-4 md:m-8'
           onClick={() => setMenuOpen(false)}
         >
           X

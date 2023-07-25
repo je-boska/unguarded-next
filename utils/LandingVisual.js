@@ -123,7 +123,9 @@ export function runLandingVisual() {
   window.addEventListener('resize', resize, false);
   resize();
 
-  window.addEventListener('click', () => {
+  const canvas = document.querySelector('canvas');
+
+  canvas.addEventListener('click', () => {
     window.location.assign('/releases');
   });
 
