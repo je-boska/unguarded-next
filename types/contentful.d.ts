@@ -45,3 +45,24 @@ export type TypePage<
   Modifiers extends ChainModifiers,
   Locales extends LocaleCode
 > = Entry<TypePageSkeleton, Modifiers, Locales>;
+
+export interface TypePressPageFields {
+  title: EntryFieldTypes.Symbol;
+  artist: EntryFieldTypes.Symbol;
+  slug: EntryFieldTypes.Symbol;
+  artwork: EntryFieldTypes.AssetLink;
+  format: EntryFieldTypes.Symbol;
+  releaseDate: EntryFieldTypes.Date;
+  catalogueNumber: EntryFieldTypes.Symbol;
+  body?: EntryFieldTypes.RichText;
+  links?: EntryFieldTypes.RichText;
+}
+
+export type TypePressPageSkeleton = EntrySkeletonType<
+  TypePressPageFields,
+  'pressPage'
+>;
+export type TypePressPage<
+  Modifiers extends ChainModifiers,
+  Locales extends LocaleCode
+> = Entry<TypePressPageSkeleton, Modifiers, Locales>;
