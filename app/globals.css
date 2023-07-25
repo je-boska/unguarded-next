@@ -33,8 +33,14 @@ a:focus {
 
 /* RICH TEXT */
 
-.rich-text {
-  @apply text-xl md:text-2xl max-w-7xl;
+.rich-text p,
+.rich-text h1,
+.rich-text h2,
+.rich-text h3,
+.rich-text h4,
+.rich-text h5,
+.rich-text h6 {
+  @apply max-w-5xl;
 }
 
 .rich-text h1 {
@@ -42,7 +48,7 @@ a:focus {
 }
 
 .rich-text h2 {
-  @apply max-w-5xl text-3xl md:text-5xl mb-8;
+  @apply text-3xl md:text-5xl mb-8;
 
   @media (min-width: 768px) {
     line-height: 1.1;
@@ -50,7 +56,7 @@ a:focus {
 }
 
 .rich-text p {
-  @apply mb-4 max-w-3xl;
+  @apply mb-4 max-w-3xl text-xl md:text-2xl;
 }
 
 .rich-text i {
@@ -72,4 +78,14 @@ a:focus {
 .rich-text th,
 .rich-text td {
   @apply px-2;
+}
+
+/* LINKS */
+
+.links {
+  @apply text-3xl md:text-5xl;
+}
+
+.links ul {
+  @apply font-decay mb-16;
 }

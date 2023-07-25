@@ -15,6 +15,7 @@ export interface TypeAlbumFields {
   releaseDate: EntryFieldTypes.Date;
   catalogueNumber: EntryFieldTypes.Symbol;
   body?: EntryFieldTypes.RichText;
+  links?: EntryFieldTypes.RichText;
 }
 
 export type TypeAlbumSkeleton = EntrySkeletonType<TypeAlbumFields, 'album'>;

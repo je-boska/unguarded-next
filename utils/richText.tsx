@@ -22,9 +22,5 @@ const options = {
 };
 
 export function renderRichTextWithImages(document: Document) {
-  return (
-    <div className='rich-text'>
-      {documentToReactComponents(document, options)}
-    </div>
-  );
+  return documentToReactComponents(document, options);
 }

@@ -1,3 +1,4 @@
+import ArrowLeft from '@/components/ArrowLeft';
 import Container from '@/components/Container';
 import { getAlbumBySlug, getAlbums } from '@/queries/albums';
 import { renderRichTextWithImages } from '@/utils/richText';
@@ -33,9 +34,22 @@ export default async function Page({ params }: { params: { slug: string } }) {
           />
         </div>
       </section>
-      <section className='mb-40'>
+      <section className='rich-text mb-40'>
         {album.fields.body ? renderRichTextWithImages(album.fields.body) : null}
       </section>
+      <section className='flex justify-center text-center'>
+        <div className='links'>
+          {album.fields.links
+            ? renderRichTextWithImages(album.fields.links)
+            : null}
+        </div>
+      </section>
+      <div className='mb-80 flex items-center justify-center'>
+        <ArrowLeft />
+        <a href='/releases' className='ml-4 font-decay text-4xl md:text-5xl'>
+          Releases
+        </a>
+      </div>
     </Container>
   );
 }
