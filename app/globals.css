@@ -109,3 +109,14 @@ a:focus {
 .press-links ul {
   @apply mt-2 mb-4 font-sans text-base lg:text-xl;
 }
+
+/* IFRAME */
+
+.iframe-container {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.iframe-container iframe {
+  @apply absolute w-full h-full top-0 left-0;
+}
