@@ -61,16 +61,15 @@ export default function NavMenu() {
           X
         </div>
         <ul className='flex flex-col w-full h-full items-center justify-center p-8 gap-10'>
-          <li>
-            <a onClick={() => setMenuOpen(false)} href='/info'>
-              Info
-            </a>
-          </li>
-          <li>
-            <a onClick={() => setMenuOpen(false)} href='/releases'>
-              Releases
-            </a>
-          </li>
+          {menuItems.map(({ title, link }, idx) => (
+            <li
+              key={idx}
+              onClick={() => setMenuOpen(false)}
+              className='text-4xl'
+            >
+              <a href={link}>{title}</a>
+            </li>
+          ))}
         </ul>
       </nav>
     </>
