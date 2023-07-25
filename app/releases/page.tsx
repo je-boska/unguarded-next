@@ -12,16 +12,10 @@ export default async function Releases() {
 
   return (
     <Container>
-      <div className='grid md:grid-cols-2 gap-4 mb-40'>
+      <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-8 mb-40'>
         {albums.map(({ fields: { slug, title, artist, artwork } }, idx) => (
           <div key={idx} className='group relative'>
             <a href={'/releases/' + slug}>
-              <div className='absolute -z-10 md:group-hover:z-20 w-full h-full flex text-center items-center justify-center font-decay text-2xl md:text-4xl'>
-                {artist}
-                <br />
-                {title}
-              </div>
-              <div className='bg-black opacity-20 h-full w-full absolute -z-10 md:group-hover:z-10' />
               <Image
                 className='w-full'
                 src={'http:' + artwork!.fields!.file!.url}
@@ -29,9 +23,9 @@ export default async function Releases() {
                 width={artwork!.fields.file!.details.image!.height}
                 height={artwork!.fields.file!.details.image!.height}
               />
-              <div className='md:hidden my-4 font-decay text-2xl'>
+              <div className='my-4 font-decay text-2xl'>
                 {' '}
-                {artist}
+                {artist} /
                 <br />
                 {title}
               </div>

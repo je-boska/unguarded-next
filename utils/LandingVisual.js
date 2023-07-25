@@ -123,6 +123,10 @@ export function runLandingVisual() {
   window.addEventListener('resize', resize, false);
   resize();
 
+  window.addEventListener('click', () => {
+    window.location.assign('/releases');
+  });
+
   // Create handlers to get mouse position and velocity
   const isTouchCapable = 'ontouchstart' in window;
 
