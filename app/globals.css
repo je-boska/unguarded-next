@@ -89,3 +89,23 @@ a:focus {
 .links ul {
   @apply font-decay mb-16;
 }
+
+/* PRESS TEXT */
+
+.press-text h3 {
+  @apply text-2xl lg:text-3xl mb-4 font-decay;
+}
+
+.press-text p {
+  @apply mb-4 max-w-3xl;
+}
+
+/* PRESS LINKS */
+
+.press-links {
+  @apply font-decay my-8 text-2xl lg:text-3xl;
+}
+
+.press-links ul {
+  @apply mt-2 mb-4 font-sans text-base lg:text-xl;
+}
