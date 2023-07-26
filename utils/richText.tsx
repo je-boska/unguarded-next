@@ -1,6 +1,13 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, Block, Document, Inline } from '@contentful/rich-text-types';
+import {
+  BLOCKS,
+  Block,
+  Document,
+  INLINES,
+  Inline,
+} from '@contentful/rich-text-types';
 import Image from 'next/image';
+import { ReactNode } from 'react';
 
 const options = {
   renderNode: {
@@ -41,6 +48,13 @@ const options = {
         );
       }
       return <div>Embed failed</div>;
+    },
+    [INLINES.HYPERLINK]: ({ data }: { data: any }, children: ReactNode) => {
+      return (
+        <a href={data.uri} target='_blank' rel='noopener nofollow noreferrer'>
+          {children}
+        </a>
+      );
     },
   },
 };
