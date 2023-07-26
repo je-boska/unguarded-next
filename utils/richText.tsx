@@ -31,7 +31,7 @@ const options = {
               )}`}
               allowFullScreen
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            ></iframe>
+            />
           </div>
         );
       }
@@ -43,15 +43,30 @@ const options = {
               height='450'
               allow='autoplay'
               src={node.data.target.fields.shareLink}
-            ></iframe>
+            />
+          </div>
+        );
+      }
+      if (node.data.target.sys.contentType.sys.id === 'bandcampEmbed') {
+        return (
+          <div className='bandcamp-iframe-container'>
+            <iframe
+              height={node.data.target.fields.tracklist ? '340px' : '120px'}
+              src={`https://bandcamp.com/EmbeddedPlayer/album=${node.data.target.fields.albumNumber}/size=large/bgcol=ffffff/linkcol=000000/tracklist=true/artwork=small/transparent=true/`}
+              seamless
+            />
           </div>
         );
       }
       return <div>Embed failed</div>;
     },
-    [INLINES.HYPERLINK]: ({ data }: { data: any }, children: ReactNode) => {
+    [INLINES.HYPERLINK]: (link: Block | Inline, children: ReactNode) => {
       return (
-        <a href={data.uri} target='_blank' rel='noopener nofollow noreferrer'>
+        <a
+          href={link.data.uri}
+          target='_blank'
+          rel='noopener nofollow noreferrer'
+        >
           {children}
         </a>
       );
