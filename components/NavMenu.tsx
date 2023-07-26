@@ -57,10 +57,10 @@ export default function NavMenu() {
       {/* Mobile nav */}
       <nav
         className={cx(
-          'font-decay text-2xl md:hidden fixed w-full h-screen bg-black transition-all',
+          'font-decay top-0 text-2xl md:hidden fixed w-full h-screen bg-black transition-all',
           {
-            'top-0': menuOpen,
-            '-top-full': !menuOpen,
+            'left-0': menuOpen,
+            '-left-full': !menuOpen,
           }
         )}
       >
