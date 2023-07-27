@@ -21,7 +21,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
 export async function generateStaticParams() {
   const pressPages = await getPressPages();
-  console.log('PRESS PAGES', pressPages);
 
   return pressPages.map((item) => ({
     slug: item.fields.slug,
