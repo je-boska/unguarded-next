@@ -1,7 +1,17 @@
-import ArrowLeft from '@/components/ArrowLeft';
-import Container from '@/components/Container';
 import SinglePage from '@/components/SinglePage';
 import { getAlbumBySlug, getAlbums } from '@/queries/albums';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const album = await getAlbumBySlug(params.slug);
+  return {
+    title: 'Unguarded | ' + album.fields.title,
+  };
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const album = await getAlbumBySlug(params.slug);

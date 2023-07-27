@@ -39,15 +39,18 @@ a:focus {
 
 .rich-text h1,
 .rich-text h2,
-.rich-text h3,
-.rich-text h4,
-.rich-text h5,
-.rich-text h6 {
+.rich-text h3 {
   @apply font-decay mb-4;
 }
 
+.rich-text h4,
+.rich-text h5,
+.rich-text h6 {
+  @apply mb-4;
+}
+
 .rich-text h1 {
-  @apply text-4xl lg:text-5xl;
+  @apply text-4xl lg:text-6xl mb-8;
 }
 
 .rich-text h2 {
@@ -74,16 +77,25 @@ a:focus {
   @apply mb-4;
 }
 
+.rich-text p a:not(.rich-text li p a) {
+  @apply underline;
+}
+
 .rich-text img {
   @apply my-8;
 }
 
-.rich-text ul {
+.rich-text ul,
+.rich-text ol {
   @apply mt-2 mb-8 font-sans text-base lg:text-xl;
 }
 
 .rich-text li p {
   @apply mb-0;
+}
+
+.rich-text ol {
+  @apply list-decimal ml-5;
 }
 
 /* IFRAME */
@@ -108,5 +120,4 @@ a:focus {
 
 .bandcamp-iframe-container iframe {
   @apply w-full max-w-[600px];
-  /* box-shadow: white 0 0 25px; */
 }

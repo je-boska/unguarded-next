@@ -11,7 +11,7 @@ export default async function Info() {
   const info = await getInfoPage();
 
   return (
-    <Container className='rich-text mb-40'>
+    <Container className='mb-40'>
       {info.fields.body ? renderRichTextWithImages(info.fields.body) : null}
     </Container>
   );

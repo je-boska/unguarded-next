@@ -11,7 +11,7 @@ export default async function Contact() {
   const contact = await getContactPage();
 
   return (
-    <Container className='rich-text mb-40'>
+    <Container className='mb-40'>
       {contact.fields.body
         ? renderRichTextWithImages(contact.fields.body)
         : null}

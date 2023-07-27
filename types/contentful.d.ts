@@ -34,6 +34,22 @@ export type TypeArtist<
   Locales extends LocaleCode
 > = Entry<TypeArtistSkeleton, Modifiers, Locales>;
 
+export interface TypeBandcampEmbedFields {
+  title: EntryFieldTypes.Symbol;
+  link: EntryFieldTypes.Symbol;
+  albumNumber: EntryFieldTypes.Symbol;
+  tracklist: EntryFieldTypes.Boolean;
+}
+
+export type TypeBandcampEmbedSkeleton = EntrySkeletonType<
+  TypeBandcampEmbedFields,
+  'bandcampEmbed'
+>;
+export type TypeBandcampEmbed<
+  Modifiers extends ChainModifiers,
+  Locales extends LocaleCode
+> = Entry<TypeBandcampEmbedSkeleton, Modifiers, Locales>;
+
 export interface TypePageFields {
   title: EntryFieldTypes.Symbol;
   slug: EntryFieldTypes.Symbol;
@@ -66,3 +82,31 @@ export type TypePressPage<
   Modifiers extends ChainModifiers,
   Locales extends LocaleCode
 > = Entry<TypePressPageSkeleton, Modifiers, Locales>;
+
+export interface TypeSoundcloudEmbedFields {
+  title?: EntryFieldTypes.Symbol;
+  shareLink: EntryFieldTypes.Symbol;
+}
+
+export type TypeSoundcloudEmbedSkeleton = EntrySkeletonType<
+  TypeSoundcloudEmbedFields,
+  'soundcloudEmbed'
+>;
+export type TypeSoundcloudEmbed<
+  Modifiers extends ChainModifiers,
+  Locales extends LocaleCode
+> = Entry<TypeSoundcloudEmbedSkeleton, Modifiers, Locales>;
+
+export interface TypeYoutubeEmbedFields {
+  title?: EntryFieldTypes.Symbol;
+  shareLink: EntryFieldTypes.Symbol;
+}
+
+export type TypeYoutubeEmbedSkeleton = EntrySkeletonType<
+  TypeYoutubeEmbedFields,
+  'youtubeEmbed'
+>;
+export type TypeYoutubeEmbed<
+  Modifiers extends ChainModifiers,
+  Locales extends LocaleCode
+> = Entry<TypeYoutubeEmbedSkeleton, Modifiers, Locales>;
