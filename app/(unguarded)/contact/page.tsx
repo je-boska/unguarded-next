@@ -18,3 +18,5 @@ export default async function Contact() {
     </Container>
   );
 }
+
+export const revalidate = 60;

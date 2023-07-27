@@ -16,3 +16,5 @@ export default async function Info() {
     </Container>
   );
 }
+
+export const revalidate = 60;
