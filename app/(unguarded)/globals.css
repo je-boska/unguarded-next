@@ -16,6 +16,10 @@ body {
   font-weight: 400;
 }
 
+::selection {
+  @apply bg-green-100 text-blue-500;
+}
+
 a:hover {
   text-decoration: line-through;
 }
