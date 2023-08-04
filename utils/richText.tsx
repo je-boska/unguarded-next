@@ -51,14 +51,14 @@ const options = {
         return (
           <div className='bandcamp-iframe-container'>
             <iframe
-              height={node.data.target.fields.tracklist ? '340px' : '120px'}
+              height={node.data.target.fields.tracklist ? '240px' : '120px'}
               src={`https://bandcamp.com/EmbeddedPlayer/album=${node.data.target.fields.albumNumber}/size=large/bgcol=ffffff/linkcol=000000/tracklist=true/artwork=small/transparent=true/`}
               seamless
             />
           </div>
         );
       }
-      return <div>Embed failed</div>;
+      return <div>Embed failed </div>;
     },
     [INLINES.HYPERLINK]: (link: Block | Inline, children: ReactNode) => {
       return (
