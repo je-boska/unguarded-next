@@ -15,6 +15,8 @@ export default async function Contact() {
       {contact.fields.body
         ? renderRichTextWithImages(contact.fields.body)
         : null}
+
+      <a href='/imprint'>Impressum</a>
     </Container>
   );
 }
