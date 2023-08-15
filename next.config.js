@@ -4,12 +4,12 @@ const nextConfig = {
     domains: ['images.ctfassets.net'],
   },
   async redirects() {
-    returns[
+    return [
       {
         source: '/in-deaths-eyes.html',
         destination: '/press/in-deaths-eyes',
         permanent: true,
-      }
+      },
     ];
   },
 };
