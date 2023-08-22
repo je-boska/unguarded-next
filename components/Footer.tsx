@@ -8,7 +8,7 @@ export default function Footer() {
         className='marquee-wrapper'
         style={{ height: '100%' }}
         gradient={false}
-        speed={120}
+        speed={60}
         pauseOnHover
       >
         {[...Array(20)].map((_, idx) => (
